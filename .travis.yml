@@ -1,8 +1,13 @@
 language: go
 
 go:
-    - tip
+  - tip
 
-install: go get ./...
+before_install:
+  - cp .netrc ~
+  - chmod 600 .netrc
 
-script: go test -v ./...
+os:
+  - osx
+
+sudo: true
